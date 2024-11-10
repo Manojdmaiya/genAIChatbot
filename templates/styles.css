@@ -1,0 +1,80 @@
+/* Main container styling */
+.container-fluid {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px); /* Adjust height to account for header */
+    transition: margin-left 0.3s;
+  }
+  /* Left and right frame styles */
+  .left-frame {
+    width: 65%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .right-frame {
+  width: 35%;
+  border-left: 1px solid black;
+  padding: 20px;
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    display: none; /* Sidebar is initially hidden */
+    z-index: 1000;
+    transition: transform 0.3s;
+    /* padding-left: 40px; */
+  }
+  .sidebar a, .sidebar button {
+    color: white;
+    text-align: center;
+  }
+  .sidebar a:hover {
+    text-decoration: none;
+    background-color: #555;
+  }
+  #main {
+    transition: margin-left 0.3s;
+  }
+  
+  #button-close {
+      margin-left: 20px;
+      border:transparent;
+      color:white;
+      background-color:#333;
+      margin-top: 30px; 
+  }
+  /* Chat bubble styles */
+  .chat-message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #f1f1f1;
+  width: fit-content; /* Adjust width to fit content */
+  max-width: 50%; /* Limit the message width to 50% of the container */
+  word-wrap: break-word; /* Ensure long words break correctly */
+  margin: 10px 0; /* Vertical margin between messages */
+  }
+  
+  .user-message {
+  background-color: #d1f7d1;
+  margin-left: auto;
+  text-align: left;
+  border-radius: 15px 15px 0 15px; /* Rounded on the right side */
+  }
+  
+  .bot-message {
+  background-color: #e6e6e6;
+  margin-right: auto;
+  text-align: left;
+  border-radius: 15px 15px 15px 0; /* Rounded on the left side */
+  }
+  
