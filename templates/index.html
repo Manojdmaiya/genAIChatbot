@@ -17,12 +17,12 @@
   }
   /* Left and right frame styles */
   .left-frame {
-    width: 65%;
+    width: 80%;
     padding: 20px;
     overflow-y: auto;
   }
   .right-frame {
-  width: 35%;
+  width: 20%;
   border-left: 1px solid black;
   padding: 20px;
   height: 100vh; /* Full viewport height */
@@ -87,10 +87,23 @@
   text-align: left;
   border-radius: 15px 15px 15px 0; /* Rounded on the left side */
   }
+
+  #questionsList {
+    list-style-type: none;
+  }
+
+  .trending-question {
+    background-color: transparent; 
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 20px 20px; 
+  }
   
  </style>
 </head>
 <body>
+
 
 <!-- Sidebar -->
 <div class="sidebar" id="mySidebar">
@@ -116,7 +129,7 @@
     </div>
     <div  id="rightFrame" class="right-frame">
         <div id="trendingQuestions">
-            <h5>Trending Questions</h5>
+            <h2 style="font-family:Montserrat,sans-serif; text-align: center; padding-bottom: 50px;">Trending Questions</h2>
             <ul id="questionsList">
               <li><button class="trending-question" onclick="setQuestion('What is the capital of France?')">What is the capital of France?</button></li>
               <li><button class="trending-question" onclick="setQuestion('How does AI work?')">How does AI work?</button></li>
@@ -125,10 +138,12 @@
           </div>
         
           <!-- Input Box for Chat -->
-        <form id="questionForm" action="">
-            <input type="text" id="questionInput" placeholder="Ask a question" />
-            <button type="submit">Send</button>
-        </form>
+          <form id="questionForm" class="form-inline" action="" style="padding-top: 150px;">
+              <div class="form-group">
+                <input type="text" class="form-control" id="questionInput" placeholder="Ask a question" style="width: 400px;">
+              </div>
+            <button class="btn btn-primary" type="submit" style="margin-left: 5px;">Send</button>
+          </form>
     </div>
   </div>
 </div>
@@ -161,8 +176,11 @@ document.getElementById("questionForm").addEventListener("submit", function(even
   event.preventDefault(); // Prevent form reload
   
   var question = document.getElementById("questionInput").value; // Get the question
+
+ 
   if (question.trim() !== "") {
       // Create user message element (on the left side)
+
       var userMessage = document.createElement("div");
       userMessage.classList.add("chat-message", "user-message");
       userMessage.textContent = question;
